@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../menu/menu.js"></script>
+    <script src="../translation/translation.js"></script>
+    <link rel="stylesheet" href="../menu/menu.css">
+    <title>Code of Logic</title>
+</head>
+<body>
+    <div class="container_pause">
+      <div class="Buttons">
+        <div class="container_buttons" id="Buttons" style="display: non">
+            <div
+              class="button1_day translate"
+              id="Button_continue"
+              onmouseover="Sound()"
+              onclick = "Sound_enter()"
+              langKey="Resume t"
+            >
+              Resume
+            </div>
+            <div
+              class="button2_day translate"
+              id="Button_4"
+              onmouseover="Sound1()"
+              onclick="Settings(); Sound_enter()"
+              langKey="Settings t"
+            >
+              Settings
+            </div>
+            <div
+              class="button3_day translate"
+              id="Button_restart"
+              onmouseover="Sound2()"
+              onclick = "Sound_enter()"
+              langKey="Restart t"
+            >
+              Restart
+            </div>
+            <div
+              class="button4_day translate"
+              id="Button_exit"
+              onmouseover="Sound3()" 
+              onclick = "Sound_enter(); Exit()"
+              langKey="Exit t"
+            >
+              Exit
+            </div>
+          <audio id="Sound" src="../menu/sounds/sound.mp3" type="audio/mpeg"></audio>
+          <audio
+            id="Sound1"
+            src="../menu/sounds/sound copy.mp3"
+            type="audio/mpeg"
+          ></audio>
+          <audio
+            id="Sound2"
+            src="../menu/sounds/sound copy 2.mp3"
+            type="audio/mpeg"
+          ></audio>
+          <audio
+            id="Sound3"
+            src="../menu/sounds/sound copy 3.mp3"
+            type="audio/mpeg"
+          ></audio>
+          <audio
+            id="Sound_enter"
+            src="../menu/sounds/sound_enter.mp3"
+            type="audio/mpeg"
+          ></audio>
+          <audio
+            id="Sound_back"
+            src="../menu/sounds/sound_back.mp3"
+            type="audio/mpeg"
+          ></audio>
+        </div>
+      </div>
+      <div class="settings-language" style="display: none" id="Settings">
+        <div class="container_sittings" id="Settings_bord">
+          <div class="container_butback">
+            <div class="button_back" onclick="Settings_back(); Sound_back()">
+              <img src="../menu/photo/button_back.png" />
+            </div>
+            <div class="text_settings translate" langKey="Settings t">
+              Settings
+            </div>
+            <img
+              class="photo_language"
+              src="../menu/photo/globe.png"
+              height="55"
+              onclick="Check_language()"
+              id="Glob"
+            />
+          </div>
+          <div class="container_sound">
+            <div class="sound_settings">
+              <img
+                src="../menu/photo/sound_set.png"
+                id="Set_1_on"
+                onclick="Set_1_off()"
+              />
+              <img
+                src="../menu/photo/no_sound.png"
+                style="display: none"
+                id="Set_1_off"
+                onclick="Set_1_on()"
+              />
+              <img
+                src="../menu/photo/sound_set2.png"
+                style="display: none"
+                id="Set_2_on"
+                onclick="Set_2_off()"
+              />
+              <img
+                src="../menu/photo/no_sound2.png"
+                style="display: none"
+                id="Set_2_off"
+                onclick="Set_2_on()"
+              />
+              <img
+                src="../menu/photo/sound_set3.png"
+                style="display: none"
+                id="Set_3_on"
+                onclick="Set_3_off()"
+              />
+              <img
+                src="../menu/photo/no_sound3.png"
+                style="display: none"
+                id="Set_3_off"
+                onclick="Set_3_on()"
+              />
+              <img
+                src="../menu/photo/sound_set4.png"
+                style="display: none"
+                id="Set_4_on"
+                onclick="Set_4_off()"
+              />
+              <img
+                src="../menu/photo/no_sound4.png"
+                style="display: none"
+                id="Set_4_off"
+                onclick="Set_4_on()"
+              />
+            </div>
+            <div class="zero_to_hundred">
+              <div
+                class="block1_day"
+                style="
+                  border-top-left-radius: 25px;
+                  border-bottom-left-radius: 25px;
+                  background-color: #22ff00;
+                "
+              ></div>
+              <div
+                class="block1_day"
+                id="Color"
+                style="background-color: #95ff00"
+              ></div>
+              <div
+                class="block1_day"
+                id="Color"
+                style="background-color: #b7ff00"
+              ></div>
+              <div
+                class="block1_day"
+                id="Color"
+                style="background-color: #d4ff00"
+              ></div>
+              <div
+                class="block1_day"
+                id="Color"
+                style="background-color: #eaff00"
+              ></div>
+              <div
+                class="block1_day"
+                id="Color"
+                style="background-color: #ffbf00"
+              ></div>
+              <div
+                class="block1_day"
+                id="Color"
+                style="background-color: #ff9500"
+              ></div>
+              <div
+                class="block1_day"
+                id="Color"
+                style="background-color: #ff6f00"
+              ></div>
+              <div
+                class="block1_day"
+                id="Color"
+                style="background-color: #ff4800"
+              ></div>
+              <div
+                class="block1_day"
+                style="
+                  background-color: #ff0000;
+                  border-top-right-radius: 25px;
+                  border-bottom-right-radius: 25px;
+                "
+              >
+                <div class="circle" id="Circle"></div>
+              </div>
+            </div>
+          </div>
+          <div class="managment">
+            <div class="for_code">
+              <div class="text_code translate" langKey="For code">For code</div>
+              <div class="block_for_button">
+                <input class="button_words_day" onkeydown="Input()" />
+                <div class="text_lineup translate" langKey="Choose line up">
+                  Choose line up
+                </div>
+              </div>
+              <div class="block_for_button">
+                <input class="button_words_day" onkeydown="Input()" />
+                <div class="text_lineup translate" langKey="Choose line L">
+                  Choose line L
+                </div>
+              </div>
+              <div class="block_for_button">
+                <input class="button_words_day" onkeydown="Input()" />
+                <div class="text_lineup translate" langKey="Choose line down">
+                  Choose line down
+                </div>
+              </div>
+              <div class="block_for_button">
+                <input class="button_words_day" onkeydown="Input()" />
+                <div class="text_lineup translate" langKey="Choose line R">
+                  Choose line R
+                </div>
+              </div>
+            </div>
+            <div class="for_shooting">
+              <div class="text_shooting translate" langKey="For shooting">
+                For shooting
+              </div>
+              <div class="block_for_button2">
+                <input class="button_words_day" onkeydown="Input()" />
+                <div class="text_lineup2 translate" langKey="Shoot t">
+                  Shoot
+                </div>
+              </div>
+              <div class="block_for_button2">
+                <input class="button_words_day" onkeydown="Input()" />
+                <div class="text_lineup2 translate" langKey="Shoot enemy">
+                  Shoot enemy
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="change_language" style="display: none" id="language">
+          <div class="flags_container">
+            <img
+              class="english"
+              src="../menu/photo/England.jpg"
+              id="Eng"
+              onclick="Fontsize_Eng(), Close_language()"
+            />
+            <img
+              class="spanish"
+              src="../menu/photo/Spain.png"
+              id="Span"
+              onclick="Fontsize_Span(), Close_language()"
+            />
+            <img
+              class="polish"
+              src="../menu/photo/Poland.jpg"
+              id="Pol"
+              onclick="Fontsize_Pol(), Close_language()"
+            />
+          </div>
+          <div class="flags_text_container">
+            <div class="language_text translate" langKey="English t">
+              English
+            </div>
+            <div class="language_text translate" langKey="Spanish t">
+              Espanola
+            </div>
+            <div class="language_text translate" langKey="Polish t">Polski</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
